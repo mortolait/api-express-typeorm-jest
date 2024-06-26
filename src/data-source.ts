@@ -15,7 +15,7 @@ export const AppDataSource = new DataSource({
   password: env.POSTGRES_PASSWORD,
   database: env.POSTGRES_DB,
   entities: [User,Product],
-  synchronize: false,
+  synchronize: true,
   logging: false,
   migrations: [__dirname +'/repositories/typeorm/migrations/*{.ts,.js}']
 });

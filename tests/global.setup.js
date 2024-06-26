@@ -13,8 +13,8 @@ async function createTestDatabase() {
     });
 
     await client.connect();
-    await client.query('DROP DATABASE IF EXISTS testdb2');
-    await client.query('CREATE DATABASE testdb2');
+    await client.query('DROP DATABASE IF EXISTS api-express');
+    await client.query('CREATE DATABASE api-express');
     await client.end();
 }
 
@@ -26,7 +26,7 @@ module.exports = async () => {
         port: process.env.POSTGRES_PORT,
         username: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
-        database: 'testdb2',
+        database: 'api-express',
         entities: [User],
         synchronize: true,
         logging: false,
