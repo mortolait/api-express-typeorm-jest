@@ -13,7 +13,7 @@ jobs:
         image: bitnami/postgresql:latest
         env:
           POSTGRESQL_USERNAME: admim
-          POSTGRESQL_PASSWORD: password123
+          POSTGRESQL_PASSWORD: docker
           POSTGRESQL_DATABASE: apiexpress
         ports:
           - 5432:5432
@@ -31,4 +31,4 @@ jobs:
       - run: npm run test:e2e
         env:
           JWT_SECRET: testing
-          DATABASE_URL: "postgresql://admim:password123@localhost:5432/apiexpress?schema=public"
+          DATABASE_URL: "postgresql://admim:docker@localhost:5432/apiexpress?schema=public"
