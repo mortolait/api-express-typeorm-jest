@@ -12,9 +12,9 @@ jobs:
       api-pg:
         image: bitnami/postgresql:latest
         env:
-          POSTGRESQL_USERNAME: admim
+          POSTGRESQL_USERNAME: postgress
           POSTGRESQL_PASSWORD: docker
-          POSTGRESQL_DATABASE: apiexpress
+          POSTGRESQL_DATABASE: api-express
         ports:
           - 5432:5432
 
