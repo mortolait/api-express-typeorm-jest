@@ -5,11 +5,11 @@ import { ProductRepository } from "../repositories/productRepository";
 export class ProductUseCase{
     constructor(private productRepository:  ProductRepository){}
 
-    async getAllUser(): Promise<Product[]>{
+    async getAll(): Promise<Product[]>{
        const products = await this.productRepository.getAll()
        return products
     }
-    async getUserById(id: number): Promise<Product>{
+    async getProductById(id: number): Promise<Product>{
         return await this.productRepository.getProductById(id)
     }
     async create(product: CreateProductInput): Promise<Partial<Product>>{

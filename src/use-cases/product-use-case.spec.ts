@@ -37,14 +37,14 @@ describe("productUseCase", ()=> {
         it("should return users", async ()=> {
             const products: Product[] = [{id: 1, description: "product 1", code: "12345",value: 10}]
             mockProductRepository.getAll.mockResolvedValue(products)
-            const result = await productUseCase.getAllUser()
+            const result = await productUseCase.getAll()
             expect(result).toEqual(products)
         })
 
         it("should return a product by id", async ()=> {
             const createdProduct: Product = {id: 1,description: "product 1",code: "123654", value: 10} 
             mockProductRepository.getProductById.mockResolvedValue(createdProduct)
-            const result = await productUseCase.getUserById(1)
+            const result = await productUseCase.getProductById(1)
             expect(result).toEqual(createdProduct)
         })
 
