@@ -19,14 +19,20 @@ async function createTestDatabase() {
 }
 
 module.exports = async () => {
+    console.log(process.env.POSTGRES_PASSWORD)
+    console.log(process.env.POSTGRES_PORT)
+    console.log(process.env.POSTGRES_HOST)
     await createTestDatabase()
+
+
+
     global.testDataSource = new DataSource({
         type: 'postgres',
         host: process.env.POSTGRES_HOST,
         port: process.env.POSTGRES_PORT,
         username: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
-        database: 'api-express',
+        database: 'apiexpress',
         entities: [User],
         synchronize: true,
         logging: false,

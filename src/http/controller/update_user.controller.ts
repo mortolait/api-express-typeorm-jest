@@ -2,7 +2,7 @@ import { Response, Request } from "express";
 import { ZodError, number, z } from 'zod'
 import { makeUserUseCase } from "../../use-cases/factories/make-create-user-use-case";
 import { CreateUserInput } from "../../entity/user";
-import { hash } from "bcrypt";
+import { hash } from "bcryptjs";
 
 const userSchema = z.object({
     name: z.string(),

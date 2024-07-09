@@ -1,12 +1,12 @@
 import { AuthUseCase } from './auth.use-case';
 import { User } from '../entity/user';
 import { AppDataSource } from '../data-source';
-import { compare } from 'bcrypt';
+import { compare } from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { env } from '../env/env';
 
 jest.mock('../data-source');
-jest.mock('bcrypt');
+jest.mock('bcryptjs');
 jest.mock('jsonwebtoken');
 
 const mockUserRepository = {

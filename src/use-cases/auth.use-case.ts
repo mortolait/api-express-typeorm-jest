@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { AppDataSource } from '../data-source'
 import { User } from '../entity/user'
-import { compare } from 'bcrypt'
+import { compare } from 'bcryptjs'
 import jwt from 'jsonwebtoken';
 import { env } from '../env/env';
 
